@@ -1,7 +1,9 @@
 package dev.srivatsan;
 
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 public class ParkingSpot {
     private final int spotNumber;
 
@@ -20,9 +22,9 @@ public class ParkingSpot {
     // Check if the vehicle can fit in the spot
     public boolean canFit(Vehicle vehicle) {
         if (vehicle instanceof Car) {
-            return true; // All spots can fit a car
+            return true;
         } else {
-            return vehicle instanceof Motorcycle; // All spots can fit a motorcycle
+            return vehicle instanceof Motorcycle;
         }
     }
 
@@ -32,10 +34,5 @@ public class ParkingSpot {
 
     public void leave() {
         this.vehicle = null;
-    }
-
-    @Override
-    public String toString() {
-        return "Spot #" + spotNumber + (vehicle == null ? " is available" : " is occupied by " + vehicle);
     }
 }

@@ -8,7 +8,7 @@ public class ParkingLot {
 
     private final int totalSpots = 6;
     private static ParkingLot instance;
-    private ParkingSpot[] parkingSpots;
+    private final ParkingSpot[] parkingSpots;
 
     private ParkingLot() {
         parkingSpots = new ParkingSpot[totalSpots];
@@ -38,7 +38,7 @@ public class ParkingLot {
     // Remove a vehicle from the parking lot
     public void removeVehicle(Vehicle vehicle) {
         for (ParkingSpot spot : parkingSpots) {
-            if (spot.getVehicle() == vehicle) {
+            if (spot.getVehicle() == vehicle) { // ToDo: check license plate also
                 spot.leave();
                 break;
             }
