@@ -1,5 +1,9 @@
 package dev.srivatsan;
 
+/**
+ * Factory Pattern
+ */
+
 public class VehicleFactory {
     public static Vehicle createVehicle(String vehicleType, String licensePlate) {
         if ("Car".equalsIgnoreCase(vehicleType)) {

@@ -1,5 +1,9 @@
 package dev.srivatsan;
 
+/**
+ * Strategy Pattern
+ */
+
 public interface ParkingStrategy {
     boolean canPark(ParkingSpot spot, Vehicle vehicle);
 }

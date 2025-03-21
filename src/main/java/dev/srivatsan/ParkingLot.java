@@ -1,13 +1,18 @@
 package dev.srivatsan;
 
-public class ParkingLot { // Singleton
+/**
+ * Singleton Pattern
+ */
 
+public class ParkingLot {
+
+    private final int totalSpots = 6;
     private static ParkingLot instance;
     private ParkingSpot[] parkingSpots;
 
     private ParkingLot() {
-        parkingSpots = new ParkingSpot[6]; // 6 spots in total
-        for (int i = 0; i < 6; i++) {
+        parkingSpots = new ParkingSpot[totalSpots];
+        for (int i = 0; i < totalSpots; i++) {
             parkingSpots[i] = new ParkingSpot(i + 1);
         }
     }

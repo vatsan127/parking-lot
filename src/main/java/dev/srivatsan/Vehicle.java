@@ -1,7 +1,9 @@
 package dev.srivatsan;
 
 import lombok.Getter;
+import lombok.ToString;
 
+@ToString
 public abstract class Vehicle {
     @Getter
     protected String licensePlate;
@@ -24,11 +26,6 @@ class Car extends Vehicle {
     public int getSize() {
         return 2;
     }
-
-    @Override
-    public String toString() {
-        return "Car (" + licensePlate + ")";
-    }
 }
 
 class Motorcycle extends Vehicle {
@@ -39,10 +36,5 @@ class Motorcycle extends Vehicle {
     @Override
     public int getSize() {
         return 1;
-    }
-
-    @Override
-    public String toString() {
-        return "Motorcycle (" + licensePlate + ")";
     }
 }

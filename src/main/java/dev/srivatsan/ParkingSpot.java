@@ -3,8 +3,8 @@ package dev.srivatsan;
 import lombok.Getter;
 
 public class ParkingSpot {
-    private int spotNumber;
-    // Get the vehicle in the spot
+    private final int spotNumber;
+
     @Getter
     private Vehicle vehicle;
 
@@ -13,7 +13,6 @@ public class ParkingSpot {
         this.vehicle = null;
     }
 
-    // Check if the spot is available
     public boolean isAvailable() {
         return vehicle == null;
     }
@@ -22,18 +21,15 @@ public class ParkingSpot {
     public boolean canFit(Vehicle vehicle) {
         if (vehicle instanceof Car) {
             return true; // All spots can fit a car
-        } else if (vehicle instanceof Motorcycle) {
-            return true; // All spots can fit a motorcycle
+        } else {
+            return vehicle instanceof Motorcycle; // All spots can fit a motorcycle
         }
-        return false;
     }
 
-    // Park the vehicle in this spot
     public void park(Vehicle vehicle) {
         this.vehicle = vehicle;
     }
 
-    // Remove the vehicle from the spot
     public void leave() {
         this.vehicle = null;
     }
